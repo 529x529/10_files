@@ -38,7 +38,7 @@ public class ParsingZipFileTest {
 
             ZipEntry entryCsv = zipFile.getEntry("simple-csv.csv");
             try (InputStream stream = zipFile.getInputStream(entryCsv)) {
-                Reader reader = new InputStreamReader(stream, StandardCharsets.UTF_8);
+                Reader reader = new InputStreamReader(stream);
                 CSVReader csvReader = new CSVReader(reader);
                 List<String[]> content = csvReader.readAll();
 
